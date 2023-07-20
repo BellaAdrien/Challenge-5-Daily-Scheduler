@@ -19,7 +19,9 @@ N/A
 
 ## Usage
 
-Provide: Hyperlink for pages
+http://127.0.0.1:5502/index.html
+
+![Alt text](<Screenshot 2023-07-19 at 9.08.28 PM.png>)
 
 ## Credits
 

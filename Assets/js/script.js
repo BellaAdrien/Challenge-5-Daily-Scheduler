@@ -23,10 +23,11 @@ $(function () {
 
   for (let i = 9; i < 18; i++) {
     var timeBlock = $("#hour-" + i)
+
     var event = localStorage.getItem("hour-" + i)
     console.log(event)
 
-    timeBlock.children()
+    timeBlock.children("textarea")
 
     // const element = array[i];
     if (i === currentHour) {
