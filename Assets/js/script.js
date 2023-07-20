@@ -23,6 +23,11 @@ $(function () {
 
   for (let i = 9; i < 18; i++) {
     var timeBlock = $("#hour-" + i)
+    var event = localStorage.getItem("hour-" + i)
+    console.log(event)
+
+    timeBlock.children()
+
     // const element = array[i];
     if (i === currentHour) {
       timeBlock.addClass("present")
@@ -43,10 +48,17 @@ $(function () {
     var parentId = currentBtn.parent().attr("id")
 
 
+    // var childrenID=currentBtn.children("class")
+    // localStorage.getItem(textArea.val("saveBtn"))
 
     alert(textArea.val() + " " + parentId)
 
     localStorage.setItem(parentId, textArea.val())
+
+    function getTasksFromLocalStorage() {
+      const tasks = JSON.parse(localStorage.getItem('tasks'))} 
+
+      // return tasks;
   }
   saveBtn.on("click", saveEvent)
   // TODO: Add a listener for click events on the save button. This code should
