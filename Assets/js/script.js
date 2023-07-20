@@ -38,10 +38,15 @@ $(function () {
 
   }
   function saveEvent(event) {
-var currentBtn=$(event.target)
-var textArea=currentBtn.siblings("textarea")
+    var currentBtn = $(event.target)
+    var textArea = currentBtn.siblings("textarea")
+    var parentId = currentBtn.parent().attr("id")
 
-alert(textArea.val());
+
+
+    alert(textArea.val() + " " + parentId)
+
+    localStorage.setItem(parentId, textArea.val())
   }
   saveBtn.on("click", saveEvent)
   // TODO: Add a listener for click events on the save button. This code should
