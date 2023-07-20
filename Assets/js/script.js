@@ -9,6 +9,7 @@ $(function () {
 
   var currentDayEl = $("#currentDay")
   var currentDayTime = dayjs().format("dddd, MMMM, D")
+  var saveBtn = $(".saveBtn")
 
   console.log(currentDayTime)
 
@@ -31,11 +32,18 @@ $(function () {
       timeBlock.addClass("past")
 
     }
-    else{
+    else {
       timeBlock.addClass("future")
     }
 
   }
+  function saveEvent(event) {
+var currentBtn=$(event.target)
+var textArea=currentBtn.siblings("textarea")
+
+alert(textArea.val());
+  }
+  saveBtn.on("click", saveEvent)
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
