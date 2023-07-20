@@ -1,23 +1,40 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
+
+
 $(function () {
-  var currentDayEl=$("#currentDay")
-  var currentDayTime=dayjs().format("dddd")
 
-    console.log(currentDayTime)
-  
-currentDayEl.text()
 
-var currentHour= dayjs().hour()
+  var currentDayEl = $("#currentDay")
+  var currentDayTime = dayjs().format("dddd, MMMM, D")
 
-console.log(currentHour)
+  console.log(currentDayTime)
+
+  currentDayEl.text(currentDayTime)
+
+  var currentHour = dayjs().hour()
+
+  console.log(currentHour)
 
 
 
   for (let i = 9; i < 18; i++) {
-    const element = array[i];
-    
+    var timeBlock = $("#hour-" + i)
+    // const element = array[i];
+    if (i === currentHour) {
+      timeBlock.addClass("present")
+
+    }
+    else if (currentHour > i) {
+      timeBlock.addClass("past")
+
+    }
+    else{
+      timeBlock.addClass("future")
+    }
+
   }
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
